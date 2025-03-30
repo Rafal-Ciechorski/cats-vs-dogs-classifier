@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-# Set parameters (you can change this path as per your dataset location)
+# Set parameters
 IMG_SIZE = 128
 BATCH_SIZE = 32
 
@@ -24,7 +24,7 @@ def load_data(data_dir, img_size=IMG_SIZE, batch_size=BATCH_SIZE):
         batch_size=batch_size
     )
 
-    # Normalize the images to [0, 1] range (it's important for neural networks)
+    # Normalize the images to [0, 1] range
     def process(image, label):
         image = tf.cast(image/255., tf.float32)
         return image, label

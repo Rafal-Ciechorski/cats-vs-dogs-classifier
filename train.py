@@ -1,7 +1,7 @@
 import tensorflow as tf
 from keras import layers, models
 import matplotlib.pyplot as plt
-from dataset_loader import load_data  # Importing the dataset loader
+from dataset_loader import load_data
 
 # Parameters
 IMG_SIZE = 128
@@ -25,7 +25,7 @@ def create_cnn_model():
         layers.MaxPooling2D((2, 2)),
         layers.Flatten(),
         layers.Dense(128, activation='relu'),
-        layers.Dense(1, activation='sigmoid')  # Binary classification (Cat vs Dog)
+        layers.Dense(1, activation='sigmoid')
     ])
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
